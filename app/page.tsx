@@ -1,5 +1,7 @@
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
+import VideoIntro from '@/components/VideoIntro';
+import Reveal from '@/components/Reveal';
 import Shows from '@/components/Shows';
 import Tour from '@/components/Tour';
 import Videos from '@/components/Videos';
@@ -16,7 +18,8 @@ export default async function Home() {
     <>
       <Navbar />
       <main>
-        <Hero />
+        <VideoIntro />
+        <Reveal><Hero /></Reveal>
         <Videos videos={videos} />
         <Shows />
         <Tour />

@@ -3,7 +3,7 @@ import { artist } from '@/lib/data';
 
 export default function Hero() {
   return (
-    <header className="hero" id="top">
+    <header className="hero">
       <div className="hero-photo">
         <Image src="/mooze.jpg" alt={artist.name} fill priority sizes="(min-width: 800px) 55vw, 100vw" style={{ objectFit: 'cover', objectPosition: 'center 20%' }} />
       </div>
