@@ -39,30 +39,29 @@ export default function VideoIntro() {
         </video>
         <div className="stage-shade" />
 
-        <div className="stage-text">
-          <div className="wrap">
-            <p className="eyebrow">{artist.tagline}</p>
-            <h1 aria-label={artist.name}>
-              {[...artist.name].map((ch, i) => (
-                <span key={i} aria-hidden="true" className="ch" style={{ animationDelay: `${0.2 + i * 0.18}s` }}>{ch}</span>
-              ))}
-            </h1>
-            <p className="lead">{artist.bio}</p>
-            <div className="btns">
-              <a className="btn fill" href="#videos">Watch top videos</a>
-              <a className="btn" href="#book">Book MOOZE</a>
-            </div>
-            <div className="socials">
-              <a href={artist.youtube} target="_blank" rel="noopener noreferrer">YouTube</a>
-              <a href={artist.facebook} target="_blank" rel="noopener noreferrer">Facebook</a>
-            </div>
-          </div>
-        </div>
-
         <button className="soundbtn" onClick={toggleSound} suppressHydrationWarning>
           {muted ? 'Sound on' : 'Sound off'}
         </button>
         <div className="scrollhint" aria-hidden="true">Scroll<i /></div>
+      </div>
+      <div className="stage-text">
+        <div className="wrap">
+          <p className="eyebrow">{artist.tagline}</p>
+          <h1 aria-label={artist.name}>
+            {[...artist.name].map((ch, i) => (
+              <span key={i} aria-hidden="true" className="ch" style={{ animationDelay: `${0.2 + i * 0.18}s` }}>{ch}</span>
+            ))}
+          </h1>
+          <p className="lead">{artist.bio}</p>
+          <div className="btns">
+            <a className="btn fill" href="#videos">Watch top videos</a>
+            <a className="btn" href="#book">Book MOOZE</a>
+          </div>
+          <div className="socials">
+            <a href={artist.youtube} target="_blank" rel="noopener noreferrer">YouTube</a>
+            <a href={artist.facebook} target="_blank" rel="noopener noreferrer">Facebook</a>
+          </div>
+        </div>
       </div>
       <div ref={sentinel} className="stage-marker" aria-hidden="true" />
     </section>

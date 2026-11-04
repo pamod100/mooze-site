@@ -102,13 +102,13 @@ footer{padding:36px 0 48px;color:var(--mute);font-size:14px}
 @media(prefers-reduced-motion:reduce){.ch{animation:none;opacity:1}}
 
 /* video stage: video stays, MOOZE text appears on top while scrolling */
-.stage{position:relative;height:240svh;background:#000;border-bottom:1px solid var(--line)}
+.stage{position:relative;height:240svh;padding:0;background:#000;border-bottom:1px solid var(--line)}
 .stage-marker{position:absolute;left:0;top:55%;width:1px;height:1px;pointer-events:none}
 .stage-sticky{position:sticky;top:56px;height:calc(100svh - 56px);min-height:420px;overflow:hidden}
 .stage video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:translateZ(0)}
 .stage-shade{position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity 1.2s ease;background:linear-gradient(to right,rgba(0,0,0,.88) 0%,rgba(0,0,0,.45) 55%,rgba(0,0,0,.1) 100%),linear-gradient(to top,rgba(0,0,0,.7),transparent 45%)}
 .stage.in .stage-shade{opacity:1}
-.stage-text{position:absolute;left:0;right:0;bottom:0;padding-bottom:clamp(32px,7vh,72px);pointer-events:none}
+.stage-text{position:absolute;left:0;right:0;top:56px;height:calc(100svh - 56px);display:flex;align-items:flex-end;padding-bottom:clamp(32px,7vh,72px);pointer-events:none;z-index:1}
 .stage.in .stage-text{pointer-events:auto}
 .stage h1{font-size:clamp(84px,22vw,220px);line-height:.9}
 .stage-text .wrap>:not(h1){opacity:0;transform:translateY(28px);transition:opacity 1s ease,transform 1s ease}
