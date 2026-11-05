@@ -15,17 +15,45 @@ export const artist = {
 export type Show = {
   date: string; // YYYY-MM-DD (past dates hide automatically)
   title: string;
+  presenter?: string;
   venue: string;
   city: string;
-  status: 'tickets' | 'soldout' | 'free';
-  ticketUrl?: string;
+  time?: string;
+  price?: string;
+  lineup?: string[];
+  poster?: { src: string; width: number; height: number };
+  soldOut?: boolean;
+  ticketUrl?: string; // add the Tickets Ministry link here to show a "Buy tickets" button
+  ticketLabel?: string;
+  contacts?: { label: string; display: string; tel: string }[];
 };
 
 export const shows: Show[] = [
-  { date: '2026-12-12', title: 'Colombo Night Live', venue: 'Nelum Pokuna Theatre', city: 'Colombo', status: 'tickets', ticketUrl: '#book' },
-  { date: '2026-12-26', title: 'Year-End Bash', venue: 'Open Air Arena', city: 'Kandy', status: 'tickets', ticketUrl: '#book' },
-  { date: '2027-01-17', title: 'Galle Beach Sessions', venue: 'Galle Face Green', city: 'Galle', status: 'soldout' },
-  { date: '2027-02-06', title: 'Northern Lights Show', venue: 'Municipal Ground', city: 'Jaffna', status: 'free' },
+  {
+    date: '2026-11-14',
+    title: 'Mathaka Yathra: Live in Concert',
+    presenter: 'Vision Crew',
+    venue: 'WTC Mall, G6 Club',
+    city: 'Abu Dhabi',
+    time: '8:00 PM to 3:00 AM',
+    price: 'Online tickets AED 100 (Tickets Ministry)',
+    lineup: ['MOOZE', 'Raveen Tharuka', 'Khanna', 'Buwaneka', 'DJ Halee Jay', 'Seven Notes Music Band Dubai'],
+    poster: { src: '/posters/mathaka-yathra.jpg', width: 1000, height: 1252 },
+    contacts: [
+      { label: 'VIP tables', display: '056 891 8607', tel: '+971568918607' },
+      { label: 'VIP tables', display: '054 702 5879', tel: '+971547025879' },
+    ],
+  },
+  {
+    date: '2027-02-20',
+    title: 'MOOZE Live: බන්ධනාගාරේ',
+    presenter: 'Kyan Family',
+    venue: 'Vihara Mahadevi Open Air Theatre',
+    city: 'Colombo',
+    time: '5 PM onward',
+    poster: { src: '/posters/bandhanagare.jpg', width: 1000, height: 1000 },
+    contacts: [{ label: 'More info', display: '+94 76 870 7537', tel: '+94768707537' }],
+  },
 ];
 
 export const tour = {
