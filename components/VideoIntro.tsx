@@ -44,7 +44,7 @@ export default function VideoIntro() {
             <p className="eyebrow">{artist.tagline}</p>
             <h1 aria-label={artist.name}>
               {[...artist.name].map((ch, i) => (
-                <span key={i} aria-hidden="true" className="ch" style={{ animationDelay: `${0.2 + i * 0.18}s` }}>{ch}</span>
+                <span key={i} aria-hidden="true" className="ch" style={{ '--i': i } as React.CSSProperties}>{ch}</span>
               ))}
             </h1>
             <p className="lead">{artist.bio}</p>
